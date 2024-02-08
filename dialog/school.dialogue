@@ -1,0 +1,32 @@
+~ start
+do set_background("classroom")
+do add_portrait("Player", 3)
+Player: It's the first day of orientation at the Abyssal Ardor Institute of Esoteric Intimacy, a prestigious but secretive research academy. The selection process was a gruelling ordeal, challenging your quickness of wit, mental fortitude, and physical capabilities, but you passed with flying colors and were granted a full scholarship with the promise of a research position if you graduate. The opportunity was too good to pass up, so here you are!
+Player: As you enter the lecture hall, you find that most of the seats are already filled. Only two remain open, on opposite ends of the hall.
+do add_portrait("Emi", 0)
+do add_portrait("Kael", 1)
+- Sit next to the young lady - she seems nervous
+	=> sit_by_emi
+- Sit next to the young man - he seems gloomy
+	=> sit_by_kael
+=> END
+
+~ sit_by_emi
+do clear_portraits()
+do add_portrait("Player", 0)
+do add_portrait("Emi", 1)
+Player: "[[Hi|Hello|Hey]]! Do you mind if I sit here?"
+Emi: "O-oh! Yes, of course! Please do, miss."
+=> END
+
+~ sit_by_kael
+do clear_portraits()
+do add_portrait("Player", 0)
+do add_portrait("Kael", 1)
+Player: "[[Hi|Hello|Hey]]! Do you mind if I sit here?"
+Kael: The young man glances up at you briefly, sighs heavily, and shrugs one shoulder.
+=> END
+
+~ grantham_intro
+
+=> END

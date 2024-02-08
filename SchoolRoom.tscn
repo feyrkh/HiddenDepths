@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc330tc1iw4vb"]
+
+[ext_resource type="Script" path="res://SchoolRoom.gd" id="1_4pk5x"]
+
+[node name="SchoolRoom" type="Node2D"]
+script = ExtResource("1_4pk5x")

@@ -1,0 +1,251 @@
+{
+  "main": {
+    "id": "7380e5eb51439a71",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc4ff4bc15e1538a",
+        "type": "tabs",
+        "dimension": 67.265625,
+        "children": [
+          {
+            "id": "7476e52875e7fc0f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Story.md",
+                "mode": "source",
+                "source": false
+              }
+            },
+            "group": "c957345779884f12"
+          },
+          {
+            "id": "42caebec285022d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "story/main/Main Storyline.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "2ba14f5b500208fb",
+        "type": "tabs",
+        "dimension": 32.734375,
+        "children": [
+          {
+            "id": "a80dc1da134dcfff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "chats/Emi.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c8e6f192d257df9a",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "Story.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.713275462622442,
+                  "close": true
+                }
+              }
+            },
+            "group": "c957345779884f12"
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b10456d03b1a78f4",
+    "type": "split",
+    "children": [
+      {
+        "id": "78c7b76f7732c297",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a1d2ebaf2c7fcae",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c12c7835a012ac6c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5f41e2495cfc66a0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9d4410504765593f",
+    "type": "split",
+    "children": [
+      {
+        "id": "40665702d4b53327",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f2bebdb2c296cc4a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "story/main/Main Storyline.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "75c18e2473188d8b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "story/main/Main Storyline.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a283086095fbb60a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "974ea6138751991f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "story/main/Main Storyline.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "42caebec285022d5",
+  "lastOpenFiles": [
+    "Story.md",
+    "story/main/Main Storyline.md",
+    "chats/Emi.md",
+    "Emi.md",
+    "story/main",
+    "story",
+    "Characters.md",
+    "Ritual Thresholds.md",
+    "Spells.md",
+    "Aria.md",
+    "Ravishing Ember.md",
+    "Trin.md",
+    "Intimacy.md",
+    "Kael.md",
+    "Overview.md",
+    "Ritual Items.md",
+    "Design Document.md",
+    "chats",
+    "Grantham.md",
+    "Gameplay Systems.md",
+    "Lustful Gleam.md",
+    "Rituals.md",
+    "Embarrassment.md",
+    "Equipment.md",
+    "Ritual.md",
+    "daily/2024-02-06.md",
+    "daily",
+    "2024-02-06.md",
+    "Welcome.md"
+  ]
+}

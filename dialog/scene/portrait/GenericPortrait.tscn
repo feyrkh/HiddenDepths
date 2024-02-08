@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chxbnlbbuaxtb"]
+
+[ext_resource type="Script" path="res://dialog/scene/portrait/GenericPortrait.gd" id="1_ggojb"]
+
+[node name="GenericPortrait" type="Node2D"]
+script = ExtResource("1_ggojb")

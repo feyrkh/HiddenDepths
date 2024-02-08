@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckabmv540cope"]
+
+[ext_resource type="Script" path="res://dialog/scene/portrait/GenericPortrait.gd" id="1_gwmaj"]
+[ext_resource type="Texture2D" uid="uid://c7hrve8jgw78t" path="res://dialog/scene/portrait/Emi.png" id="2_l5vrp"]
+
+[node name="GenericPortrait" type="Node2D"]
+script = ExtResource("1_gwmaj")
+
+[node name="BasePortrait" type="Sprite2D" parent="."]
+position = Vector2(-1, -441)
+texture = ExtResource("2_l5vrp")

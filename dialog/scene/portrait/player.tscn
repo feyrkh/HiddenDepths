@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://deijmbhqfgb08"]
+
+[ext_resource type="Script" path="res://dialog/scene/portrait/GenericPortrait.gd" id="1_b6jfl"]
+[ext_resource type="Texture2D" uid="uid://kxqq16yn3uq0" path="res://dialog/scene/portrait/Player.jpg" id="2_swfbq"]
+
+[node name="GenericPortrait" type="Node2D"]
+script = ExtResource("1_b6jfl")
+
+[node name="BasePortrait" type="Sprite2D" parent="."]
+position = Vector2(-1, -441)
+texture = ExtResource("2_swfbq")
