@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://chxbnlbbuaxtb"]
+[gd_scene load_steps=3 format=3 uid="uid://chxbnlbbuaxtb"]
 
 [ext_resource type="Script" path="res://dialog/scene/portrait/GenericPortrait.gd" id="1_ggojb"]
+[ext_resource type="Texture2D" uid="uid://c7hrve8jgw78t" path="res://dialog/scene/portrait/Emi.png" id="2_s1tu2"]
 
 [node name="GenericPortrait" type="Node2D"]
 script = ExtResource("1_ggojb")
+
+[node name="BasePortrait" type="Sprite2D" parent="."]
+position = Vector2(-1, -441)
+texture = ExtResource("2_s1tu2")
+
+[node name="MoodLabel" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -248.0
+offset_top = -694.0
+offset_right = -98.0
+offset_bottom = -641.0
+text = "mood: neutral"

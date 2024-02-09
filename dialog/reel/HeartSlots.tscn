@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0wg3g6egvu0"]
+
+[ext_resource type="Script" path="res://dialog/reel/HeartSlots.gd" id="1_5jlsm"]
+[ext_resource type="Script" path="res://dialog/reel/SlotLever.gd" id="2_e8qkl"]
+[ext_resource type="Texture2D" uid="uid://5q03ydo5m7kh" path="res://dialog/reel/neutral_icon.jpg" id="3_2kkpa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27hw5"]
+radius = 50.0
+
+[node name="HeartSlots" type="Node2D"]
+script = ExtResource("1_5jlsm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -485.0
+offset_top = -414.0
+offset_right = 2230.0
+offset_bottom = 1296.0
+mouse_filter = 1
+color = Color(0.360784, 0.360784, 0.360784, 0.054902)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 316.0
+offset_top = 159.0
+offset_right = 1621.0
+offset_bottom = 863.0
+mouse_filter = 1
+color = Color(1, 0.772549, 0.258824, 1)
+
+[node name="SelectionMarker" type="Line2D" parent="."]
+z_index = 10
+width = 3.0
+
+[node name="SlotRod" type="Polygon2D" parent="."]
+position = Vector2(1417, 332)
+color = Color(0.698039, 0.67451, 0.360784, 1)
+polygon = PackedVector2Array(-21, 3, 21, 3, 22, 239, -21, 239)
+
+[node name="SlotLever" type="CharacterBody2D" parent="." node_paths=PackedStringArray("rod")]
+position = Vector2(1417, 332)
+input_pickable = true
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("2_e8qkl")
+rod = NodePath("../SlotRod")
+
+[node name="SlotHandle" type="Sprite2D" parent="SlotLever"]
+texture = ExtResource("3_2kkpa")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlotLever"]
+shape = SubResource("CircleShape2D_27hw5")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 315.0
+offset_top = 159.0
+offset_right = 1620.0
+offset_bottom = 199.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+fit_content = true

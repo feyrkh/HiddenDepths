@@ -3,4 +3,8 @@
 [ext_resource type="Script" path="res://SchoolRoom.gd" id="1_4pk5x"]
 
 [node name="SchoolRoom" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_4pk5x")
+
+[node name="PopupLayer" type="CanvasLayer" parent="."]
+process_mode = 3

@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnf2u5fnb5ya5"]
+
+[ext_resource type="Script" path="res://dialog/reel/HeartReel.gd" id="1_ojqg5"]
+[ext_resource type="Texture2D" uid="uid://5q03ydo5m7kh" path="res://dialog/reel/neutral_icon.jpg" id="2_mie8k"]
+
+[node name="HeartReel" type="Node2D"]
+script = ExtResource("1_ojqg5")
+
+[node name="TileViewArea" type="MarginContainer" parent="."]
+clip_contents = true
+offset_right = 100.0
+offset_bottom = 150.0
+
+[node name="Tiles" type="Control" parent="TileViewArea"]
+layout_mode = 2
+
+[node name="Tile0" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile1" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile2" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile3" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile4" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile5" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile6" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile7" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile8" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0
+
+[node name="Tile9" type="TextureRect" parent="TileViewArea/Tiles"]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mie8k")
+stretch_mode = 2
+metadata/tile_score = 0

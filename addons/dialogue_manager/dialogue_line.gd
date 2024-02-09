@@ -89,10 +89,18 @@ func _to_string() -> String:
 			return "<DialogueLine mutation>"
 	return ""
 
+func has_tag(tag_name: String) -> bool:
+	var wrapped := "%s=" % tag_name
+	for t in tags:
+		if t == tag_name or t.begins_with(wrapped):
+			return true
+	return false
 
 func get_tag_value(tag_name: String) -> String:
 	var wrapped := "%s=" % tag_name
 	for t in tags:
 		if t.begins_with(wrapped):
 			return t.replace(wrapped, "").strip_edges()
+		if t == tag_name:
+			return "true"
 	return ""

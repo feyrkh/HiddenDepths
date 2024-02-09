@@ -56,14 +56,19 @@ var dialogue_line: DialogueLine:
 		# Show any responses we have
 		responses_menu.modulate.a = 0
 		if dialogue_line.responses.size() > 0:
-			for response in dialogue_line.responses:
+			for response:DialogueResponse in dialogue_line.responses:
 				# Duplicate the template so we can grab the fonts, sizing, etc
-				var item: RichTextLabel = response_template.duplicate(0)
+				var item = response_template.duplicate(DUPLICATE_SCRIPTS)
 				item.name = "Response%d" % responses_menu.get_child_count()
 				if not response.is_allowed:
 					item.name = String(item.name) + "Disallowed"
 					item.modulate.a = 0.4
-				item.text = response.text
+				
+				if item.has_method("set_dialogue_line"):
+					item.set_dialogue_line(dialogue_line)
+				if item.has_method("set_dialogue_response"):
+					item.set_dialogue_response(response)
+				item.text = "[center]"+response.text + response.generate_skill_text()+"[/center]"
 				item.show()
 				responses_menu.add_child(item)
 
@@ -197,27 +202,28 @@ func add_portrait(character: String, slot: int = 0):
 		await remove_portrait(slot_marker.get_child(0).character_name)
 
 	# Instantiate the character
-	var packed_portrait = load("res://dialog/scene/portrait/%s.tscn" % character)
-	if packed_portrait:
-		var portrait = packed_portrait.instantiate()
-		slot_marker.add_child(portrait)
-		portrait.set_character_name(character)
-		var on_right_side_of_screen = slot_marker.global_position.x > get_viewport().content_scale_size.x / 2
-		if on_right_side_of_screen:
-			portrait.scale.x = -1
+	var packed_portrait = preload("res://dialog/scene/portrait/GenericPortrait.tscn")
+	var portrait:GenericPortrait = packed_portrait.instantiate()
+	slot_marker.add_child(portrait)
+	portrait.set_character_name(character)
+	var on_right_side_of_screen = slot_marker.global_position.x > get_viewport().content_scale_size.x / 2
+	portrait.set_flip(on_right_side_of_screen)
 
-		portraits[character] = portrait
+	portraits[character] = portrait
 
-		# Character appears
-		var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).set_ease(Tween.EASE_IN_OUT)
-		tween.set_parallel(true)
-		tween.tween_property(portrait, "position:x", 0.0, 0.5).from(100 if on_right_side_of_screen else -100)
-		tween.tween_property(portrait, "modulate", Color.WHITE, 0.5).from(Color.TRANSPARENT)
-		return get_tree().create_timer(0.5).timeout
+	# Character appears
+	var tween: Tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).set_ease(Tween.EASE_IN_OUT)
+	tween.set_parallel(true)
+	tween.tween_property(portrait, "position:x", 0.0, 0.5).from(100 if on_right_side_of_screen else -100)
+	tween.tween_property(portrait, "modulate", Color.WHITE, 0.5).from(Color.TRANSPARENT)
+	return get_tree().create_timer(0.5).timeout
 
 
-func call_portrait(character: String, method: String) -> void:
-	portraits[character].call(method)
+func call_portrait(character: String, method: String, args=null) -> void:
+	if args == null:
+		portraits[character].call(method)
+	else:
+		portraits[character].call(method, args)
 
 
 func remove_portrait(character: String):
@@ -250,7 +256,7 @@ func configure_menu() -> void:
 	var items = get_responses()
 	for i in items.size():
 		var item: Control = items[i]
-
+			
 		item.mouse_filter = Control.MOUSE_FILTER_STOP
 		item.focus_mode = Control.FOCUS_ALL
 
@@ -297,19 +303,21 @@ func _on_mutated(_mutation: Dictionary) -> void:
 
 func _on_response_mouse_entered(item: Control) -> void:
 	if "Disallowed" in item.name: return
-
+	if get_tree().paused:
+		return
 	item.grab_focus()
 
-
 func _on_response_gui_input(event: InputEvent, item: Control) -> void:
+	if get_tree().paused:
+		return
 	if "Disallowed" in item.name: return
 
 	get_viewport().set_input_as_handled()
 
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
-		responses_menu.modulate.a = 0.0
-		next(dialogue_line.responses[item.get_index()].next_id)
-	elif event.is_action_pressed("ui_accept") and item in get_responses():
+	if (event is InputEventMouseButton and event.is_pressed() and event.button_index == 1) or (event.is_action_pressed("ui_accept") and item in get_responses()):
+		if item.has_method("on_selected"):
+			await item.on_selected()
+			print("selection callback complete")
 		responses_menu.modulate.a = 0.0
 		next(dialogue_line.responses[item.get_index()].next_id)
 

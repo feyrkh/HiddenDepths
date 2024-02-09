@@ -48,15 +48,33 @@ func _init(data: Dictionary = {}) -> void:
 		text_replacements = data.text_replacements
 		tags = data.tags
 		translation_key = data.translation_key
+		pass
 
+func generate_skill_text()->String:
+	if !has_tag("skill"):
+		return ""
+	var skill:ReelConfig = GameState.get_reel_config(get_tag_value("skill"))
+	var heart_total = skill.get_heart_total() + int(get_tag_value("h"))
+	var skull_total = skill.get_skull_total() + int(get_tag_value("s"))
+	var all_total:float = skill.get_total_slots()
+	var result = " ([color=red]Gamble![/color] - 💖: %d%% 💀: %d%%)" % [round(heart_total/all_total*100), round(skull_total/all_total*100)]
+	return result
 
 func _to_string() -> String:
 	return "<DialogueResponse text=\"%s\">" % text
 
+func has_tag(tag_name: String) -> bool:
+	var wrapped := "%s=" % tag_name
+	for t in tags:
+		if t == tag_name or t.begins_with(wrapped):
+			return true
+	return false
 
 func get_tag_value(tag_name: String) -> String:
 	var wrapped := "%s=" % tag_name
 	for t in tags:
 		if t.begins_with(wrapped):
 			return t.replace(wrapped, "").strip_edges()
+		if t == tag_name:
+			return "true"
 	return ""
